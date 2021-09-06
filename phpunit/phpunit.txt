@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="vendor/autoload.php" 
+        colors="true"
+        verbose = "true"
+        >
+        <!--processIsolation= "true"-->
+
+    <testsuites>
+        <testsuite name="general">
+            <directory>tests/</directory>
+        </testsuite>
+        <!--
+        <testsuite name="api">
+            <directory>tests/api/</directory>
+        </testsuite>
+
+        <testsuite name="app">
+            <directory>tests/app/</directory>
+        </testsuite>
+
+        <testsuite name="entidades">
+            <directory>tests/entidades/</directory>
+        </testsuite>
+
+        -->
+    </testsuites>
+
+    <php>
+        <!--
+        <ini name = "memory_limit" value = '500M'/>
+
+        <const name = 'DB_HOST'   value = '127.0.0.1'/>
+        <const name = 'DB_USER'   value = 'root'/>
+        <const name = 'DB_PASS'   value = ''/>
+        <const name = 'DB_NOMBRE' value = 'abogados_bbdd'/>
+
+        <const name = 'BASE_URL'  value = 'http://localhost/dp/plataforma/'/>
+        <const name = 'BASE_FILE' value = '/Applications/XAMPP/xamppfiles/htdocs/dp/plataforma/'/>
+
+        <const name = 'INM_ENTORNO' value = 'pruebas' />
+        -->
+
+    </php>
+
+    <filter>
+        <whitelist>
+            <!-- <directory suffix=".php">src/XString/</directory> -->
+            <!-- <directory suffix=".php">src/MasTest/</directory> ¿Inutil? -->
+        </whitelist>
+    </filter>
+</phpunit>

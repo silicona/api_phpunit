@@ -1,0 +1,3 @@
+phpunit/vendor/
+phpunit/composer.lock
+.DS_Store
