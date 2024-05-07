@@ -5,7 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                bat 'dir'
                 bat 'php --version'
+                bat 'composer --version'
                 bat 'phpunit --version'
             }
         }
