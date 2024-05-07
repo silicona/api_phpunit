@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 bat 'php --version'
-                // sh 'phpunit --version'
+                bat 'phpunit --version'
             }
         }
         stage('Test') {
