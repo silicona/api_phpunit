@@ -6,6 +6,8 @@ require_once './helpers/base.helper.php';
 
 class ThreadsTest extends TestCase
 {
+    public $threader;
+    
     public function setUp(): void {
         $this -> threader = new ThreadController();
     }

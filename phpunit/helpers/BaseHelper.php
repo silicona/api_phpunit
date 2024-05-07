@@ -1,21 +1,24 @@
 <?php
-require_once '../src/class/Calculadora.php';
-require_once '../src/class/ThreadsController.php';
+
+namespace Helpers;
+
+use XMLReader;
+use mysqli;
+
+//require_once '../src/class/Calculadora.php';
+//require_once '../src/class/ThreadsController.php';
 
 class BaseHelper
 {
 
-    public static function establecer_conexion($db_host = '')
+    public static function establecer_conexion()
     {
-        if ($db_host != 'localhost:8889' && $db_host != "127.0.0.1") {
+        $host = $GLOBALS['DB_HOST'];
+        $user = $GLOBALS['DB_USER'];
+        $pass = $GLOBALS['DB_PASS'];
+        $name = $GLOBALS['DB_NAME'];
 
-            define('DB_HOST', $GLOBALS['DB_HOST']);
-            define('DB_USER', $GLOBALS['DB_USER']);
-            define('DB_PASS', $GLOBALS['DB_PASS']);
-            define('DB_NOMBRE', $GLOBALS['DB_NAME']);
-        }
-
-        $conexion = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NOMBRE);
+        $conexion = new mysqli($host, $user, $pass, $name);
         mysqli_query($conexion, 'SET NAMES "utf8"');
 
         return $conexion;

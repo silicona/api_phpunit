@@ -1,7 +1,12 @@
 <?php
+
 declare(strict_types = 1);
+
+namespace Tests;
 use PHPUnit\Framework\TestCase;
-require_once './helpers/base.helper.php';
+use Helpers\BaseHelper;
+
+//require_once './helpers/base.helper.php';
 
 class BaseTest extends TestCase {
 
@@ -10,7 +15,7 @@ class BaseTest extends TestCase {
 
 	public static function setUpBeforeClass(): void{
 
-		self::$conexion = BaseHelper::establecer_conexion(DB_HOST);
+		self::$conexion = BaseHelper::establecer_conexion();
 		//print_r('Jarjar: ' . getenv('DB_HOST'));
 		//print_r('Jarjar: ' . DB_HOST);
         //self::assertTrue( DB_HOST == 'localhost' || DB_HOST == '127.0.0.1', 'DB_HOST NO apunta a local. ' . DB_HOST );
@@ -51,9 +56,9 @@ class BaseTest extends TestCase {
 
 	public function test_dir(){
 
-		$directorio = "/Users/nadies/typescript/api-phpunit/tests";
+		$endDir = "api_phpunit\\phpunit\\tests";
 
-		$this -> assertSame( $directorio, __DIR__, 'Debería devolver el directorio del archivo.' );
+		$this -> assertStringEndsWith($endDir, __DIR__, 'Debería devolver el directorio del archivo.' );
 	}
 
 	public function test_zlib_instalada(){
@@ -91,11 +96,11 @@ class BaseTest extends TestCase {
 	}
 
 
-	public function test_usort_dps(){
+	public function test_usort(){
 
 		$arr = array('DP-1078', 'DP-43', 'DP-234');
 
-		function ordenar_arr_dps($a, $b){
+		$func = function($a, $b){
 			
 			$val1 = (int) str_replace('DP-', '', $a);
 			$val2 = (int) str_replace('DP-', '', $b);
@@ -103,41 +108,33 @@ class BaseTest extends TestCase {
 			if( $val1 == $val2 ){ return 0;	}
 
 			return $val1 < $val2 ? -1 : 1;
-		}
+		};
 
-		usort($arr, 'ordenar_arr_dps');
-		//print_r($arr);
+		usort($arr, $func);
+
 		$this -> assertSame( 'DP-43', $arr[0], 'Debería haber ordenado primero el DP menor.' );
 	}
 
 
-	public function test_mayor_que_0(){
-
-		$id = 2;
+	public function test_mayor_que_0()
+	{
 
 		$this -> assertTrue( 2 > 0, 'El entero debería ser mayor que 0.' );
 
 		$this -> assertTrue( '2' > 0, 'El string de número debería ser mayor que 0.' );
 
-		$this -> assertFalse( 'abc' > 0, 'El string de letras no debería ser mayor que 0.' );
+		$this -> assertTrue( 'abc' > 0, 'El string de letras debería ser mayor que 0.' );
 	}
 
 
-	public function test_preg_match(){
+	public function test_preg_match()
+	{
 
-		$url = 'https://www.idealista.com/login-email.htm?adId=85799834&lang=es&uri=index.htm&ident=fDFPmM0oyvStBg5YkQEMMC7l9kLDX8%2BDMmZSZV5PAeLfjoihZY%2FN4yGyFz7sdcii72l3b7jILCWR%0A455F7PwhDSnLrqliuhR%2B&xts=582065&xtor=EPR-201-[express_alerts_20190607]-20190607-[inmueble_28_77.000]-[]-20190607103902';
+		$url = 'https://www.idealista.com/login-email.htm?adId=000000&lang=es&uri=index.htm&ident=fDFPmM0oyvStBg5YkQEMMC7l9kLDX8%2BDMmZSZV5PAeLfjoihZY%2FN4yGyFz7sdcii72l3b7jILCWR%0A455F7PwhDSnLrqliuhR%2B&xts=582065&xtor=EPR-201-[express_alerts_20190607]-20190607-[inmueble_28_77.000]-[]-20190607103902';
 
 		preg_match( '/(adId=\d+&)/', $url, $adId );
 
-		$this -> assertRegExp('/^adId=\d+&$/', $adId[1], 'Debería tener la adId de la url.' );
-
-		/*
-		$res = parse_url($url);
-		parse_str($res['query'], $arr_res);
-
-		print_r($arr_res['adId']);*/
-
-		//print_r($res);
+		$this->assertMatchesRegularExpression('/^adId=\d+&$/', $adId[1], 'Debería tener la adId de la url.' );
 	}
 
 
@@ -146,7 +143,6 @@ class BaseTest extends TestCase {
 		$array1    = array("color" => "red", 2, 4);
 		$array2    = array("a", "b", "color" => "green", "shape" => "trapezoid", 4);
 		$arr_merge = array_merge($array1, $array2);
-		//print_r($resultado);
 
 		$res = array(
 			'color' => 'green',
@@ -161,43 +157,4 @@ class BaseTest extends TestCase {
 		$this -> assertSame($res, $arr_merge, 'Debería ser el mismo array.' );
 	}
 
-	/*
-	public function test_sql_regexp(){
-
-
-		$link = self::$conexion;
-		$id_municipio = 1;
-		$param = implode( ' ', array(
-			'ausente = 0',
-			'AND activo = 1',
-			'AND id_delegacion > 0',
-		) );
-
-		$param_no = $param . ' AND disponible_zonas NOT REGEXP "(^|,)' . $id_municipio . '(,|$)"';
-		$del_no = Helper::suministra_entidad_bbdd($link, 'asociado', $param_no);
-
-		$param_si = $param . ' AND disponible_zonas REGEXP "(^|,)' . $id_municipio . '(,|$)"';
-		$del_si = Helper::suministra_entidad_bbdd($link, 'asociado', $param_si);
- 
-		$sql = 'SELECT DISTINCT id_asociado FROM 4887_asociados
-							WHERE activo = 1
-								AND ausente = 0
-								AND id_delegacion > 0
-								AND disponible_zonas REGEXP "(^|,)' . $id_municipio . '(,|$)"';
-
-		$res = mysqli_query($link, $sql);
-		$arr_del = array();
-		while( $e = mysqli_fetch_assoc($res) ){
-
-			$arr_del[] = $e['id_asociado'];
-
-			//print_r($e['id_asociado'] . "\n");
-			//$this -> assertTrue( $e['id_asociado'] == 60, 'Ook' );
-		}
-
-		$this -> assertTrue( in_array($del_si -> id_asociado, $arr_del), 'Delegado Si debería estar en arr_del.' );
-
-		$this -> assertFalse( in_array($del_no -> id_asociado, $arr_del), 'Delegado No no debería estar en arr_del.' );
-	}
-	*/
 }
