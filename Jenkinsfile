@@ -11,7 +11,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat 'vendor/bin/phpunit --version'
+                bat 'pwd'
+                bat 'phpunit/vendor/bin/phpunit --version'
             }
         }
         stage('Deploy') {
