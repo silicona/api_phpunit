@@ -6,9 +6,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 bat 'cd phpunit && composer install'
-                bat 'php --version'
-                bat 'composer --version'
-                bat 'phpunit --version'
             }
         }
         stage('Test') {
