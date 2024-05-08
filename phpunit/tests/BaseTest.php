@@ -56,7 +56,7 @@ class BaseTest extends TestCase {
 
 	public function test_dir(){
 
-		$endDir = "api_phpunit\\phpunit\\tests";
+		$endDir = "phpunit\\tests";
 
 		$this -> assertStringEndsWith($endDir, __DIR__, 'Debería devolver el directorio del archivo.' );
 	}

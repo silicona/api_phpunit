@@ -1,8 +1,13 @@
 <?php
 
 declare(strict_types=1);
+
+namespace Tests\Api;
+
 use PHPUnit\Framework\TestCase;
-require_once './helpers/base.helper.php';
+use App\Class\ThreadController;
+//use Helpers\BaseHelper;
+//require_once './helpers/base.helper.php';
 
 class ThreadsTest extends TestCase
 {

@@ -1,11 +1,18 @@
 <?php
-declare(strict_types = 1);
-use PHPUnit\Framework\TestCase;
 
+declare(strict_types = 1);
+
+namespace Tests\Class;
+
+use PHPUnit\Framework\TestCase;
+use Helpers\BaseHelper;
+use App\Class\Calculadora;
 // Clase Calculadora importada en BaseHelper
-require_once './helpers/base.helper.php';
+//require_once './helpers/base.helper.php';
 
 class CalculadoraTest extends TestCase {
+
+    public $calc;
 
     public function setUp(): void
     {

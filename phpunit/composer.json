@@ -3,7 +3,7 @@
         "phpunit/phpunit": "*"
     },
     "scripts": {
-        "test": "vendor/bin/phpunit",
+        "test": "phpunit",
         "test:base": "vendor/bin/phpunit tests/BaseTest.php"
     },
     "autoload-dev": {

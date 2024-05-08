@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Class;
+
 class ThreadController {
 
     public function fork(){

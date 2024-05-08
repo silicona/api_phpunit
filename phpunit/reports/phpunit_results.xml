@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\wamp64\www\api_phpunit\phpunit\phpunit.xml" tests="21" assertions="28" errors="0" failures="0" skipped="1" time="0.199498">
+    <testsuite name="general" tests="12" assertions="15" errors="0" failures="0" skipped="1" time="0.131530">
+      <testsuite name="Tests\BaseTest" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.115855">
+        <testcase name="test_date_dia_semana" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="42" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="2" time="0.005744"/>
+        <testcase name="test_dir" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="57" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005832"/>
+        <testcase name="test_zlib_instalada" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="64" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.030492"/>
+        <testcase name="test_minusculas" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="70" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="2" time="0.030248"/>
+        <testcase name="test_switch" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="79" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.006238"/>
+        <testcase name="test_usort" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="99" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005731"/>
+        <testcase name="test_mayor_que_0" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="119" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="3" time="0.012469"/>
+        <testcase name="test_preg_match" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="130" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.013345"/>
+        <testcase name="test_array_merge" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="141" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005755"/>
+      </testsuite>
+      <testsuite name="Tests\Api\ThreadsTest" file="C:\wamp64\www\api_phpunit\phpunit\tests\api\ThreadsTest.php" tests="1" assertions="0" errors="0" failures="0" skipped="1" time="0.007104">
+        <testcase name="testSeguimientoDeHilos" file="C:\wamp64\www\api_phpunit\phpunit\tests\api\ThreadsTest.php" line="20" class="Tests\Api\ThreadsTest" classname="Tests.Api.ThreadsTest" assertions="0" time="0.007104">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Class\CalculadoraTest" file="C:\wamp64\www\api_phpunit\phpunit\tests\class\CalculadoraTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.008571">
+        <testcase name="testSumarDosNumeros" file="C:\wamp64\www\api_phpunit\phpunit\tests\class\CalculadoraTest.php" line="22" class="Tests\Class\CalculadoraTest" classname="Tests.Class.CalculadoraTest" assertions="1" time="0.003408"/>
+        <testcase name="testSumarDosNumerosKO" file="C:\wamp64\www\api_phpunit\phpunit\tests\class\CalculadoraTest.php" line="27" class="Tests\Class\CalculadoraTest" classname="Tests.Class.CalculadoraTest" assertions="1" time="0.005164"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="base" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.067968">
+      <testsuite name="Tests\BaseTest" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" tests="9" assertions="13" errors="0" failures="0" skipped="0" time="0.067968">
+        <testcase name="test_date_dia_semana" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="42" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="2" time="0.005801"/>
+        <testcase name="test_dir" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="57" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.006067"/>
+        <testcase name="test_zlib_instalada" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="64" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005564"/>
+        <testcase name="test_minusculas" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="70" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="2" time="0.006014"/>
+        <testcase name="test_switch" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="79" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.012619"/>
+        <testcase name="test_usort" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="99" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.014470"/>
+        <testcase name="test_mayor_que_0" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="119" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="3" time="0.005664"/>
+        <testcase name="test_preg_match" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="130" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005782"/>
+        <testcase name="test_array_merge" file="C:\wamp64\www\api_phpunit\phpunit\tests\BaseTest.php" line="141" class="Tests\BaseTest" classname="Tests.BaseTest" assertions="1" time="0.005987"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

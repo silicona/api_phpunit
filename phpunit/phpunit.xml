@@ -10,6 +10,9 @@
     </testsuite>
 
   </testsuites>
+  <logging>
+    <junit outputFile="./reports/phpunit_results.xml"/>
+  </logging>
   <php>
     <!--
       <ini name = "display_errors" value = "true"/>
