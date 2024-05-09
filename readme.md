@@ -1,21 +1,23 @@
 # Readme
-Test de PHPUnit. Suite creada con composer.
-[Docs](https://phpunit.readthedocs.io/en/9.5/textui.html)
-
-# Creación
-  - Crea el archivo composer.json
-  - Ejecuta `composer require --dev phpunit/phpunit`: Dependencia principal
-  - Ejecuta `composer require --dev nelmio/alice`: Dependencia de mocks 
-  - Ejecuta `composer require --dev fzaninotto/faker`: Dependencia de semillas
+Test de PHPUnit y codeception, creada con composer.
+Actualizada para dar soporte de Jenkins
 
 ## Instalacion
-  - Ejecutar en consola `composer install`.
+  - Desde la carpeta phpunit, ejecutar en consola `composer install`.
+  - Desde la carpeta codeception, ejecutar en consola `composer install`.
+  - Ejecutar los tests con `composer run test`.
 
 ## Ejecución
   - Desde la carpeta root de la suite, ejecutar en consola (Ajustar el total de las suites en phpunit-xml, etiqueta testsuites):
     - Todas las suites: `phpunit`
     - Solo una clase: `phpunit tests/path/a/ClaseTest.php`
     - Solo un test: `phpunit tests/path/a/ClaseTest.php --filter test_a_probar`
+
+  - Ver [Codeception Docs](https://codeception.com/docs/reference/Commands) para saber ejecutar los test
+
+### Jenkins
+  - Instalar Jenkins en tu sistema y configurar proyecto MultiBranch Pipeline sobre este repositorio
+  - Realiza un build del proyecto
 
 ### Flags
 Flags para ejecutar desde la consola:
