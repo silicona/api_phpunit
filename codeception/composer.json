@@ -1,0 +1,17 @@
+{
+    "name": "alejo/codeception",
+    "authors": [
+        {
+            "name": "silicona",
+            "email": "alejoizquierdomartinez@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "codeception/codeception": "^5.1",
+        "codeception/module-phpbrowser": "*",
+        "codeception/module-asserts": "*"
+    },
+    "scripts": {
+        "test": "vendor\\bin\\codecept run --xml codeception_results.xml --quiet"
+    }
+}

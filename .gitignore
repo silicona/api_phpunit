@@ -1,3 +1,5 @@
 phpunit/vendor/
 phpunit/composer.lock
+codeception/vendor/
+codeception/composer.lock
 .DS_Store
